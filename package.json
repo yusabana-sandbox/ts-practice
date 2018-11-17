@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/yusabana-sandbox/ts-practice",
   "author": "Yuji Takaesu <taka.esu.user@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.1.6"
+  }
 }
