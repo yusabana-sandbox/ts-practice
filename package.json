@@ -1,0 +1,8 @@
+{
+  "name": "ts-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yusabana-sandbox/ts-practice",
+  "author": "Yuji Takaesu <taka.esu.user@gmail.com>",
+  "license": "MIT"
+}
