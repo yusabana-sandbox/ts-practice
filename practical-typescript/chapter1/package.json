@@ -4,7 +4,8 @@
   "description": "- この本をやってみた - https://www.amazon.co.jp/dp/B07T477V6G",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc"
   },
   "author": "",
   "license": "ISC",
