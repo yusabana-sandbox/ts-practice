@@ -14,8 +14,10 @@ $ npm install --save-dev typescript
 
 ```
 $ npx tsc --init
-```
 
+ローカルにインストールしていない場合は以下のコマンドでパッケージを指定して実行する
+$ npx -p typescript tsc --init
+```
 
 ## tsconfigの設定内容
 `esModuleInterop` の設定は `module:commonjs` 形式で吐き出した場合でもimportできるようにするオプション
