@@ -30,7 +30,7 @@ import fs from 'fs'
       const _imgs = Array.from(document.querySelectorAll('img'))
       return _imgs.map(a => a.src)
     })
-    // 以下のようなやり方でも取れる（画像のみ箱のほうがいいね）
+    // 以下のようなやり方でも取れる（画像のみはこのほうがいいね）
     // const images = await page.evaluate(() => Array.from(document.images, e => e.src));
 
     for (const imageUrl of imageUrls) {
