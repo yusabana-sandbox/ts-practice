@@ -34,7 +34,8 @@ import fs from 'fs'
     // const images = await page.evaluate(() => Array.from(document.images, e => e.src));
 
     for (const imageUrl of imageUrls) {
-      const filename = `${month}_${imageUrl.split('/').pop()}`
+      const basename = imageUrl.split('/').pop()
+      const filename = `${month}_${basename}`
       const outputPath = path.join(__dirname, 'images', filename)
       const source = await page.goto(imageUrl)
 
