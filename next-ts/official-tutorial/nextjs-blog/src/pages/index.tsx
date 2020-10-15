@@ -5,7 +5,9 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/Date";
 
-export default function Home({ allPostsData }) {
+type Props = { allPostsData: ReturnType<typeof getSortedPostsData> };
+
+export default function Home({ allPostsData }: Props) {
   return (
     <Layout home={true}>
       <Head>

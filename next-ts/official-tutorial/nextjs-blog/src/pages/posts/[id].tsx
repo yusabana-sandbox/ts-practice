@@ -1,10 +1,14 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Date from "../../components/Date";
 import Layout from "../../components/Layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.scss";
 
-export default function Post({ postData }) {
+type Props = {
+  postData: { title: string; date: string; contentHtml: string };
+};
+export default function Post({ postData }: Props) {
   return (
     <Layout>
       <Head>
@@ -31,7 +35,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps<any, any> = async ({ params }) => {
   // params.idを使用して、ブログの投稿に必要なデータを取得する
   // remark使っているのでawaitする
   const postData = await getPostData(params.id);
@@ -41,4 +45,4 @@ export async function getStaticProps({ params }) {
       postData,
     },
   };
-}
+};

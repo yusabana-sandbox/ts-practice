@@ -5,6 +5,10 @@ import remark from "remark";
 import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
+type MarkdownMeta = {
+  title: string;
+  date: string;
+};
 
 export const getSortedPostsData = () => {
   // Get file names under /posts
@@ -23,7 +27,7 @@ export const getSortedPostsData = () => {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...(matterResult.data as MarkdownMeta),
     };
   });
 
@@ -49,7 +53,7 @@ export const getAllPostIds = () => {
   });
 };
 
-export const getPostData = async (id) => {
+export const getPostData = async (id: string) => {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -66,6 +70,6 @@ export const getPostData = async (id) => {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...(matterResult.data as MarkdownMeta),
   };
 };
